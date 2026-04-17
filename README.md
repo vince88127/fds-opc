@@ -1,36 +1,256 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 飞碟社OPC - 会员社群网站
 
-## Getting Started
+一个类似生财有术的会员制社群网站,为飞碟社OPC社群成员提供优质内容和服务。
 
-First, run the development server:
+## 项目简介
+
+飞碟社OPC是一个专注于赚钱项目分享和实战训练的会员社群。本网站提供以下核心功能:
+
+### 核心功能模块
+
+1. **首页 - 会员动态**
+   - 会员发布的帖子流
+   - 支持点赞、评论、分享
+   - 按时间倒序展示最新内容
+
+2. **项目库**
+   - 精选赚钱项目资料库
+   - 按分类筛选(轻资产创业、内容变现、技能服务、电商等)
+   - 显示项目难度、预估收益、标签等信息
+   - 文章形式的详细项目介绍
+
+3. **航海训练营**
+   - 每月主题训练营
+   - 限时报名机制
+   - 显示开始/结束时间、报名截止时间
+   - 参与人数统计
+
+4. **聚会**
+   - 会员自发组织的线下活动
+   - 会员可发起聚会
+   - 其他会员可报名参加
+   - 显示时间、地点、人数限制
+
+5. **广场**
+   - 类似微博的短内容分享
+   - 支持文字和图片
+   - 点赞、评论、分享功能
+
+6. **深海圈**
+   - 高客单价学习陪跑服务
+   - 多档位服务套餐
+   - 详细的服务内容和价格展示
+
+## 技术栈
+
+- **框架**: Next.js 16 (App Router)
+- **语言**: TypeScript
+- **样式**: Tailwind CSS
+- **UI组件**: Radix UI + 自定义组件
+- **图标**: Lucide React
+- **数据存储**: JSON文件 (开发阶段,后期可迁移到数据库)
+- **日期处理**: date-fns
+
+## 项目结构
+
+```
+fds-opc/
+├── app/                    # Next.js App Router页面
+│   ├── page.tsx           # 首页(会员动态)
+│   ├── projects/          # 项目库
+│   ├── voyages/           # 航海训练营
+│   ├── meetups/           # 线下聚会
+│   ├── square/            # 广场
+│   └── deep-sea/          # 深海圈
+├── components/            # React组件
+│   ├── navbar.tsx         # 导航栏
+│   └── ui/                # UI基础组件
+├── lib/                   # 工具函数
+│   ├── db.ts             # 数据库操作
+│   └── utils.ts          # 通用工具
+├── types/                 # TypeScript类型定义
+│   └── index.ts          # 所有类型定义
+└── data/                  # JSON数据文件
+    ├── posts.json         # 帖子数据
+    ├── projects.json      # 项目数据
+    ├── voyages.json       # 航海数据
+    ├── meetups.json       # 聚会数据
+    ├── square-posts.json  # 广场动态
+    └── deep-sea-circles.json  # 深海圈服务
+```
+
+## 快速开始
+
+### 1. 安装依赖
+
+```bash
+npm install
+```
+
+### 2. 启动开发服务器
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 3. 访问网站
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+打开浏览器访问 [http://localhost:3000](http://localhost:3000)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 功能说明
 
-## Learn More
+### 数据管理
 
-To learn more about Next.js, take a look at the following resources:
+当前使用JSON文件存储数据,所有数据文件位于 `data/` 目录:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `posts.json` - 会员帖子
+- `projects.json` - 项目库
+- `voyages.json` - 航海训练营
+- `meetups.json` - 线下聚会
+- `square-posts.json` - 广场动态
+- `deep-sea-circles.json` - 深海圈服务
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+你可以直接编辑这些JSON文件来添加、修改或删除内容。
 
-## Deploy on Vercel
+### 会员系统
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+当前版本为基础版本,会员认证功能将在后续版本中实现:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+**第一阶段(当前)**:
+- 展示型网站
+- 数据使用JSON文件存储
+- 基础UI和页面结构
+
+**第二阶段(计划中)**:
+- 会员注册/登录
+- 权限管理
+- 管理员后台
+
+**第三阶段(计划中)**:
+- 在线支付集成
+- 自动开通会员权限
+- 数据库迁移(MongoDB/PostgreSQL)
+
+## 开发指南
+
+### 添加新页面
+
+1. 在 `app/` 目录下创建新文件夹
+2. 添加 `page.tsx` 文件
+3. 在 `components/navbar.tsx` 中添加导航链接
+
+### 修改样式
+
+项目使用Tailwind CSS,可以直接在组件中使用Tailwind类名。
+
+全局样式在 `app/globals.css` 中定义。
+
+### 添加新数据类型
+
+1. 在 `types/index.ts` 中定义TypeScript类型
+2. 在 `lib/db.ts` 中添加数据操作方法
+3. 在 `data/` 目录创建对应的JSON文件
+
+## 后台管理系统
+
+访问地址: `http://localhost:3000/admin`
+
+### 功能模块
+
+1. **数据概览** (`/admin`)
+   - 统计数据展示
+   - 最新内容列表
+   - 航海状态监控
+
+2. **用户管理** (`/admin/users`)
+   - 用户列表
+   - 搜索筛选
+   - 用户状态管理
+
+3. **内容管理** (`/admin/content`)
+   - 帖子管理
+   - 项目管理
+   - 创建/编辑/删除
+
+4. **航海管理** (`/admin/voyages`)
+   - 航海列表
+   - 报名进度
+   - 状态管理
+
+5. **其他模块**
+   - 聚会管理
+   - 广场管理
+   - 系统设置
+
+### 创建项目
+
+访问 `/admin/content` → 点击"新建项目"
+
+项目包含以下模块:
+- 基本信息(标题、分类、难度、收益)
+- 这是什么项目
+- 案例展示
+- 怎么做
+- 需要什么资源
+- 收益分析
+- 适合人群
+- 操作步骤
+- 需要的工具
+- 注意事项
+- 风险提示
+
+## 部署
+
+### Vercel部署(推荐)
+
+1. 将代码推送到GitHub
+2. 在Vercel中导入项目
+3. 自动部署完成
+
+### 其他平台
+
+支持所有支持Next.js的平台,如:
+- Netlify
+- Railway
+- 自建服务器
+
+## 后续开发计划
+
+- [x] 后台管理系统
+- [x] 项目创建功能
+- [ ] 用户认证系统
+- [ ] 评论功能完善
+- [ ] 文件上传功能
+- [ ] 搜索功能
+- [ ] 通知系统
+- [ ] 数据分析面板移动端适配优化
+
+## 常见问题
+
+### 如何替换Logo?
+
+1. 将你的Logo图片保存到 `public/` 目录
+2. 命名为 `logo.png` 或 `logo.svg` (推荐SVG格式)
+3. 如果使用其他格式,需要修改 `components/navbar.tsx` 中的图片路径
+
+推荐尺寸: 200-400px × 200-400px
+
+### 如何修改网站名称?
+
+在 `app/layout.tsx` 中修改 `metadata` 对象。
+
+### 如何添加示例数据?
+
+直接编辑 `data/` 目录下的JSON文件。
+
+### 如何更换配色方案?
+
+在 `app/globals.css` 中修改CSS变量,或直接修改组件中的Tailwind类名。
+
+## 技术支持
+
+如有问题,请联系飞碟社OPC管理员。
+
+## 许可证
+
+本项目仅供飞碟社OPC内部使用。

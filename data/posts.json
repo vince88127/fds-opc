@@ -1,0 +1,59 @@
+[
+  {
+    "id": "1",
+    "authorId": "user1",
+    "author": {
+      "id": "user1",
+      "username": "张三",
+      "email": "zhangsan@example.com",
+      "password": "",
+      "role": "member",
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    "title": "我在抖音卖货月入5万的经验分享",
+    "content": "大家好,我是做抖音电商的,经过3个月的摸索,终于找到了适合自己的方法。今天分享一下我的经验...",
+    "tags": ["抖音", "电商", "副业"],
+    "likes": 128,
+    "comments": [],
+    "createdAt": "2024-04-10T08:30:00.000Z",
+    "updatedAt": "2024-04-10T08:30:00.000Z"
+  },
+  {
+    "id": "2",
+    "authorId": "user2",
+    "author": {
+      "id": "user2",
+      "username": "李四",
+      "email": "lisi@example.com",
+      "password": "",
+      "role": "member",
+      "createdAt": "2024-01-15T00:00:00.000Z"
+    },
+    "title": "小红书种草账号运营心得",
+    "content": "做小红书3个月,粉丝从0到2万,月收入稳定在1.5万左右。分享一下我的运营技巧和避坑指南...",
+    "tags": ["小红书", "种草", "内容运营"],
+    "likes": 95,
+    "comments": [],
+    "createdAt": "2024-04-12T14:20:00.000Z",
+    "updatedAt": "2024-04-12T14:20:00.000Z"
+  },
+  {
+    "id": "3",
+    "authorId": "user3",
+    "author": {
+      "id": "user3",
+      "username": "王五",
+      "email": "wangwu@example.com",
+      "password": "",
+      "role": "member",
+      "createdAt": "2024-02-01T00:00:00.000Z"
+    },
+    "title": "AI工具变现实战:我是如何月入3万的",
+    "content": "利用ChatGPT和Midjourney等AI工具,为企业提供内容创作服务,目前月收入稳定在3万+...",
+    "tags": ["AI", "工具", "变现"],
+    "likes": 203,
+    "comments": [],
+    "createdAt": "2024-04-13T10:15:00.000Z",
+    "updatedAt": "2024-04-13T10:15:00.000Z"
+  }
+]

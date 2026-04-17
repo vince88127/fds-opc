@@ -1,0 +1,44 @@
+[
+  {
+    "id": "1",
+    "organizerId": "user1",
+    "organizer": {
+      "id": "user1",
+      "username": "张三",
+      "email": "zhangsan@example.com",
+      "password": "",
+      "role": "member",
+      "createdAt": "2024-01-01T00:00:00.000Z"
+    },
+    "title": "北京 | AI项目交流会",
+    "description": "聚焦AI赚钱项目,分享实战经验,结识志同道合的伙伴。",
+    "location": "北京市朝阳区望京SOHO",
+    "date": "2024-04-20T14:00:00.000Z",
+    "maxParticipants": 30,
+    "currentParticipants": 18,
+    "participants": [],
+    "status": "upcoming",
+    "createdAt": "2024-04-01T00:00:00.000Z"
+  },
+  {
+    "id": "2",
+    "organizerId": "user2",
+    "organizer": {
+      "id": "user2",
+      "username": "李四",
+      "email": "lisi@example.com",
+      "password": "",
+      "role": "member",
+      "createdAt": "2024-01-15T00:00:00.000Z"
+    },
+    "title": "上海 | 电商创业者聚会",
+    "description": "电商从业者线下交流,分享选品、运营、供应链等实战经验。",
+    "location": "上海市浦东新区陆家嘴金融中心",
+    "date": "2024-04-25T15:00:00.000Z",
+    "maxParticipants": 25,
+    "currentParticipants": 12,
+    "participants": [],
+    "status": "upcoming",
+    "createdAt": "2024-04-03T00:00:00.000Z"
+  }
+]
