@@ -75,14 +75,6 @@ export default function AdminLoginPage() {
               登录
             </Button>
           </form>
-
-          <div className="mt-6 p-4 bg-gray-50 rounded-lg">
-            <p className="text-sm text-gray-600 text-center">
-              默认账号: <span className="font-mono font-semibold">admin</span>
-              <br />
-              默认密码: <span className="font-mono font-semibold">fd123</span>
-            </p>
-          </div>
         </CardContent>
       </Card>
     </div>
