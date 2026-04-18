@@ -29,7 +29,7 @@ export default function NewProjectPage() {
     tools: '', // 需要的工具
     tips: '', // 注意事项
     
-    tags: [],
+    tags: [] as string[],
     newTag: '',
   })
 

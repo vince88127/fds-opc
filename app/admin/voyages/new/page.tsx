@@ -48,7 +48,7 @@ export default function NewVoyagePage() {
     // 你将获得
     benefits: '',
     
-    tags: [],
+    tags: [] as string[],
     newTag: '',
   })
 
