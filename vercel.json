@@ -1,0 +1,27 @@
+{
+  "rewrites": [
+    {
+      "source": "/:path*",
+      "destination": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.fdopc.com"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "destination": "/admin/login",
+      "has": [
+        {
+          "type": "host",
+          "value": "admin.fdopc.com"
+        }
+      ],
+      "permanent": false
+    }
+  ]
+}
