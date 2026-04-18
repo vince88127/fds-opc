@@ -1,7 +1,7 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { 
   LayoutDashboard, 
   Users, 
@@ -14,7 +14,7 @@ import {
   Menu,
   X
 } from 'lucide-react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const menuItems = [
   { name: '数据概览', href: '/admin', icon: LayoutDashboard },
@@ -32,7 +32,33 @@ export default function AdminLayout({
   children: React.ReactNode
 }) {
   const pathname = usePathname()
+  const router = useRouter()
   const [sidebarOpen, setSidebarOpen] = useState(true)
+
+  // 检查登录状态
+  useEffect(() => {
+    // 如果是登录页面,不需要检查
+    if (pathname === '/admin/login') {
+      return
+    }
+
+    // 检查是否已登录
+    const isLoggedIn = localStorage.getItem('adminLoggedIn')
+    if (!isLoggedIn) {
+      router.push('/admin/login')
+    }
+  }, [pathname, router])
+
+  // 登出功能
+  const handleLogout = () => {
+    localStorage.removeItem('adminLoggedIn')
+    router.push('/admin/login')
+  }
+
+  // 如果是登录页面,直接显示内容
+  if (pathname === '/admin/login') {
+    return <>{children}</>
+  }
 
   return (
     <div className="min-h-screen bg-gray-100">
@@ -56,6 +82,13 @@ export default function AdminLayout({
             >
               返回前台
             </Link>
+            <button
+              onClick={handleLogout}
+              className="flex items-center gap-2 px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+            >
+              <LogOut className="h-4 w-4" />
+              登出
+            </button>
             <div className="h-8 w-8 rounded-full bg-gradient-to-br from-blue-400 to-purple-500 flex items-center justify-center text-white text-sm font-semibold">
               A
             </div>
